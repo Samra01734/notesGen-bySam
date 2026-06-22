@@ -12,7 +12,7 @@
         }req.userId=verifyToken.userId
         next()
     } catch (error) {
-        
+    return res.status(500).json({messege:`is auth error ${error}`})
     }
  }
  export default isAuth
