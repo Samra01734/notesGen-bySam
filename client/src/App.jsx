@@ -1,4 +1,4 @@
-import { Routes,Route } from "react-router-dom"
+import { Routes,Route, Navigate } from "react-router-dom"
 
 import Home from "./pages/Home"
 import Auth from "./pages/Auth"
@@ -24,9 +24,15 @@ console.log(userData);
 
   return (
    <>
-   <Routes>
-    <Route path='/' element={<Home/>}/>
-    <Route path='auth' element={<Auth/>}/>
+   <Routes><Route
+  path="/"
+  element={userData ? <Home /> : <Navigate to="/auth" replace />}
+/>
+
+<Route
+  path="/auth"
+  element={userData ? <Navigate to="/" replace /> : <Auth />}
+/>
    </Routes>
    
    </>
