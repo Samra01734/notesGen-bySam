@@ -5,10 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import Home from "./pages/Home";
 import Auth from "./pages/Auth";
 import History from "./pages/History";
-import Notes from "./pages/Notes";
+import Notes from "./pages/Notes.jsx";
+
 
 import getCurrentUser from "./services/api";
 import Price from "./pages/Price";
+import TopicForm from "./components/TopicForm.jsx";
 
 export const serverUrl = "http://localhost:8000";
 
@@ -61,7 +63,8 @@ function App() {
       />
       <Route path="/price" element={<Price />} />
 <Route path="/history" element={<History />} />
-{/* <Route path="/notes" element={<notes />} /> */}
+<Route path="/notes" element={<Notes />} />
+<Route path="/TopicFrom" element={<TopicForm />} />
 
     </Routes>
   );

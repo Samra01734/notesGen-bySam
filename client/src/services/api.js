@@ -22,3 +22,15 @@ export const getCurrentUser = async (dispatch) => {
 };
 
 export default getCurrentUser;
+
+export const generateNotes=async(payload)=>{
+try {
+  const result =await axios.post(serverUrl+"/api/notes/generate-notes",{payload},
+    {withCredentials:true}
+  )
+  console.log(result.data)
+  return result.data
+} catch (error) {
+  
+}
+}
